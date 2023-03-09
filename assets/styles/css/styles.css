@@ -4,6 +4,7 @@
   --primary-gradient-to: hsl(335, 100%, 65%);
   --neutral-pale-blue: hsl(243, 100%, 93%);
   --neutral-grayish-blue: hsl(229, 7%, 55%);
+  --neutral-grayish-blue-bg: hsl(229, 7%, 100%);
   --neutral-dark-blue: hsl(228, 56%, 26%);
   --neutral-very-dark-blue: hsl(229, 57%, 11%);
 }
@@ -363,8 +364,80 @@ template {
   width: calc(100% - 7.5rem);
   height: fit-content;
   padding: 2.25rem;
+  padding-bottom: 3.75rem;
   border-radius: 0.5rem;
   background-color: var(--neutral-dark-blue);
+  font-size: 0.875rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  color: var(--neutral-pale-blue);
+  position: relative;
+}
+.storage p {
+  margin-top: 0;
+}
+.storage > strong:last-of-type {
+  margin-left: auto;
+}
+.storage__free {
+  width: 11rem;
+  height: 4.5rem;
+  border-radius: 0.5rem;
+  position: absolute;
+  bottom: 0;
+  transform: translateY(50%);
+  background-color: var(--neutral-grayish-blue-bg);
+  text-transform: uppercase;
+  color: var(--neutral-grayish-blue);
+  font-weight: 700;
+  letter-spacing: 0.07rem;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+}
+.storage__free strong {
+  color: var(--neutral-very-dark-blue);
+  font-size: 2.5rem;
+  letter-spacing: 0rem;
+}
+
+.memory-usage {
+  --total: 1000;
+  --used: 750;
+  --parent-height: 1.25rem;
+  --bar-height: calc(var(--parent-height) - .35rem);
+  --side: calc(var(--bar-height) - .175rem);
+  min-width: 100%;
+  position: relative;
+  height: var(--parent-height);
+  border-radius: 1rem;
+  background-color: hsl(229deg, 57%, 15%);
+  margin-bottom: 0.5rem;
+}
+.memory-usage::after, .memory-usage::before {
+  position: absolute;
+  content: "";
+}
+.memory-usage::before {
+  border-radius: 1rem;
+  height: var(--bar-height);
+  width: calc((100% - 0.35rem) * var(--used) / var(--total));
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0.175rem;
+  background: linear-gradient(to right, var(--primary-gradient-from), var(--primary-gradient-to));
+}
+.memory-usage::after {
+  height: var(--side);
+  width: var(--side);
+  background-color: white;
+  border-radius: 100%;
+  left: calc((100% - 0.35rem) * var(--used) / var(--total));
+  top: 50%;
+  transform: translate(-100%, -50%);
 }
 
 /*# sourceMappingURL=styles.css.map */

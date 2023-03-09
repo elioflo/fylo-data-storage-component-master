@@ -1,0 +1,40 @@
+.memory-usage {
+  --total: 1000;
+  --used: 750; // 815 is so big
+  --parent-height: 1.25rem;
+  --bar-height: calc(var(--parent-height) - .35rem);
+  --side: calc(var(--bar-height) - .175rem);
+  min-width: 100%;
+  position: relative;
+  height: var(--parent-height);
+  border-radius: 1rem;
+  background-color: hsl(229, 57%, 15%);
+  margin-bottom: .5rem;
+  
+  &::after, &::before {
+    position: absolute;
+    content: '';
+  }
+  
+  &::before {
+    border-radius: 1rem;
+    height: var(--bar-height);
+    width: calc(calc(100% - .35rem) * var(--used) / var(--total));
+    top: 50%;
+    transform: translateY(-50%);
+    left: calc(.35rem / 2);
+    background: linear-gradient(to right, var(--primary-gradient-from), var(--primary-gradient-to));
+  }
+  
+  &::after {
+    height: var(--side);
+    width: var(--side);
+    background-color: white;
+    border-radius: 100%;
+    left: calc(calc(100% - .35rem) * var(--used) / var(--total));
+    top: 50%;
+    transform: translate(-100%,-50%);
+  }
+
+
+}

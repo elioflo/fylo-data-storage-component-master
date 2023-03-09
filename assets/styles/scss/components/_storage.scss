@@ -2,6 +2,45 @@
   width: calc(100% - 7.5rem);
   height: fit-content;
   padding: 2.25rem;
+  padding-bottom: 3.75rem;
   border-radius: .5rem;
   background-color: var(--neutral-dark-blue);
+  font-size: 0.875rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  color: var(--neutral-pale-blue);
+  position: relative;
+
+  p {
+    margin-top: 0;
+  }
+
+  & > strong:last-of-type {
+    margin-left: auto;
+  }
+
+  &__free {
+    width: 11rem;
+    height: 4.5rem;
+    border-radius: .5rem;
+    position: absolute;
+    bottom: 0;
+    transform: translateY(50%);
+    background-color: var(--neutral-grayish-blue-bg);
+    text-transform: uppercase;
+    color: var(--neutral-grayish-blue);
+    font-weight: 700;
+    letter-spacing: .07rem;
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+    justify-content: center;
+    font-size: .75rem;
+    strong {
+      color: var(--neutral-very-dark-blue);
+      font-size: 2.5rem;
+      letter-spacing: 0rem;
+    }
+  }
 }
