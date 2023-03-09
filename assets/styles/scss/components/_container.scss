@@ -1,4 +1,10 @@
 .container {
   min-height: 100vh;
   font-family: 'Raleway', sans-serif;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  background: url('../../images/bg-mobile.png') no-repeat;
+  background-size: 100% 100%;
 }

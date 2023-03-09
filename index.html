@@ -18,12 +18,23 @@
 </head>
 <body class="container">
 
-  You’ve used 815 GB of your storage
+  <div class="hero">
+    <img class="hero__logo" src="./assets/images/logo.svg" alt="">
+    <a href="#" class="hero__link"><img src="./assets/images/icon-document.svg" alt=""></a>
+    <a href="#" class="hero__link"><img src="./assets/images/icon-folder.svg" alt=""></a>
+    <a href="#" class="hero__link"><img src="./assets/images/icon-upload.svg" alt=""></a>
+  </div>
+  <div class="storage">
 
-  185 GB Left
+    You’ve used <span>815 GB</span> of your storage
+
+    <input type="range" id="vol" name="vol" min="0" max="50">
   
-  0 GB
-  1000 GB
+    185 GB Left
+    
+    0 GB
+    1000 GB
+  </div>
   
   <!-- <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
